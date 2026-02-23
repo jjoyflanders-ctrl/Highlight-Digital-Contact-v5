@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Highlight Industries | Contact Card</title>
+  <meta name="description" content="Highlight Industries contact card. Save to contacts and share." />
+  <meta name="theme-color" content="#3F845B" />
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon-192.png">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="siteHeader">
+    <div class="siteHeader__inner">
+      <img class="siteHeader__img" src="./assets/header.png" alt="Highlight Industries" />
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="desktop" aria-label="Desktop contact card">
+      <div class="desktopCard">
+        <div class="desktopCard__left">
+          <div class="avatar">
+            <div class="avatar__circle">
+              <span class="avatar__initials" id="initials">H</span>
+            </div>
+          </div>
+
+          <div class="dInfo">
+            <h1 class="dName" id="name">Loading…</h1>
+            <div class="dTitle" id="title"></div>
+            <div class="dCompany" id="company"></div>
+
+            <div class="dRows">
+              <a class="row" id="phoneRow" href="#">
+                <span class="row__icon row__icon--phone" aria-hidden="true"></span>
+                <span class="row__text" id="phoneText"></span>
+              </a>
+              <a class="row" id="emailRow" href="#">
+                <span class="row__icon row__icon--email" aria-hidden="true"></span>
+                <span class="row__text" id="emailText"></span>
+              </a>
+              <a class="row" id="webRow" href="https://www.highlightindustries.com" target="_blank" rel="noopener">
+                <span class="row__icon row__icon--web" aria-hidden="true"></span>
+                <span class="row__text" id="webText"></span>
+              </a>
+            </div>
+
+            <button class="saveBtn" id="saveBtnDesktop">Save to Contacts</button>
+          </div>
+        </div>
+
+        <aside class="desktopCard__right">
+          <div class="qrWrap">
+            <div class="qrLabel">Scan to save</div>
+            <div id="qrDesktop" class="qr"></div>
+          </div>
+        </aside>
+      </div>
+
+      <p class="hint">Test dynamic profiles via <code>?u=slug</code>. Example: <code>?u=taryn-swayze</code></p>
+    </section>
+
+    <section class="mobile" aria-label="Mobile contact card">
+      <div class="mHero">
+        <img class="mHero__img" src="./assets/hero.png" alt="" />
+        <div class="mHero__fade"></div>
+      </div>
+
+      <div class="mBody">
+        <div class="mQrBox">
+          <!-- Generated QR code renders here (real QR, not an image) -->
+          <div id="qrMobile" class="qr--mobile"></div>
+        </div>
+
+        <h1 class="mName" id="mName">Loading…</h1>
+        <div class="mTitle" id="mTitle"></div>
+        <div class="mCompany" id="mCompany"></div>
+
+        <div class="mRows">
+          <a class="mRow" id="mPhoneRow" href="#">
+            <span class="mRow__icon mRow__icon--phone" aria-hidden="true"></span>
+            <span class="mRow__text" id="mPhoneText"></span>
+          </a>
+
+          <a class="mRow" id="mEmailRow" href="#">
+            <span class="mRow__icon mRow__icon--email" aria-hidden="true"></span>
+            <span class="mRow__text mRow__text--wrap" id="mEmailText"></span>
+          </a>
+
+          <a class="mRow" id="mWebRow" href="https://www.highlightindustries.com" target="_blank" rel="noopener">
+            <span class="mRow__icon mRow__icon--web" aria-hidden="true"></span>
+            <span class="mRow__text mRow__text--wrap" id="mWebText"></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mBottomBar">
+        <button class="mBottomBtn mBottomBtn--save" id="saveBtnMobile">Save to Contacts</button>
+        <button class="mBottomBtn mBottomBtn--share" id="shareBtn">
+          <span class="mBottomBtn__icon" aria-hidden="true">✈</span>
+          <span class="mBottomBtn__label">Share</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="shareModal" aria-hidden="true">
+    <div class="modal__backdrop" id="shareBackdrop"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+      <div class="modal__header">
+        <div>
+          <div class="modal__kicker">SHARE</div>
+          <div class="modal__title" id="shareTitle">Share this contact card</div>
+        </div>
+        <button class="modal__close" id="shareClose" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal__content">
+        <div class="shareRow">
+          <input class="shareRow__input" id="shareLinkInput" readonly />
+          <button class="shareRow__btn" id="copyLinkBtn">Copy</button>
+        </div>
+
+        <div class="shareGrid">
+          <a class="shareAction" id="smsShare" href="#"><div class="shareAction__icon">💬</div><div class="shareAction__label">Text</div></a>
+          <a class="shareAction" id="emailShare" href="#"><div class="shareAction__icon">✉️</div><div class="shareAction__label">Email</div></a>
+          <a class="shareAction" id="linkedinShare" href="#" target="_blank" rel="noopener"><div class="shareAction__icon">in</div><div class="shareAction__label">LinkedIn</div></a>
+          <a class="shareAction" id="facebookShare" href="#" target="_blank" rel="noopener"><div class="shareAction__icon">f</div><div class="shareAction__label">Facebook</div></a>
+          <a class="shareAction" id="xShare" href="#" target="_blank" rel="noopener"><div class="shareAction__icon">𝕏</div><div class="shareAction__label">X</div></a>
+        </div>
+
+        <div class="modal__hint" id="shareHint"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
