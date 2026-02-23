@@ -432,19 +432,15 @@ code{font-family:var(--mono); background:#eef2f7; padding:2px 6px; border-radius
 }
 
 
-/* === Make Send to Phone button green like primary === */
-#sendToPhoneDesktop,
-.mBottomBtn--share {
-  background: #3F845B !important;
-  color: white !important;
-  border: none !important;
-}
-#sendToPhoneDesktop:hover,
-.mBottomBtn--share:hover {
-  filter: brightness(1.08);
+
+/* === Desktop search: keep Open button beside the search input === */
+.searchBox{ flex-wrap: nowrap !important; }
+.searchInput{
+  width: auto !important;
+  flex: 1 1 320px;
+  min-width: 220px;
 }
 
-/* === Rename Install button style (Download) === */
-#installBtn {
-  font-weight: 900;
-}
+/* === Desktop: remove the initials circle/avatar === */
+.avatar{ display: none !important; }
+.desktopCard__left{ gap: 0 !important; }
