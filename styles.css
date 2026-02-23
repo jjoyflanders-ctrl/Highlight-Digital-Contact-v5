@@ -89,8 +89,8 @@ code{font-family:var(--mono); background:#eef2f7; padding:2px 6px; border-radius
   position:absolute; left:0; right:0; bottom:0; height: 110px;
   background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,1));
 }
-.mBody{background:#fff; margin-top: -18px; border-radius: 26px; box-shadow: var(--shadow); padding: 0 18px 92px;}
-.mQrBox{display:flex; justify-content:center; padding-top: 26px;}
+.mBody{background:#fff; margin-top: -10px; border-radius: 26px; box-shadow: var(--shadow); padding: 0 18px 92px;}
+.mQrBox{display:flex; justify-content:center; padding-top: 32px;}
 .qr--mobile{width: 210px; height: 210px; border-radius: 20px;}
 .mName{text-align:center; font-size: 44px; margin: 14px 0 0; letter-spacing:-.02em;}
 .mTitle{text-align:center; font-size: 18px; font-weight:900; color: var(--hi-green); margin-top: 6px;}
